@@ -1,0 +1,23 @@
+{
+  "name": "ijkl-week2-project",
+  "version": "1.0.0",
+  "description": "## Use TDD to build a To-do app",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape *test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-17/IJKL-week2-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-17/IJKL-week2-project/issues"
+  },
+  "homepage": "https://github.com/fac-17/IJKL-week2-project#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
