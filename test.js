@@ -1,11 +1,12 @@
 var test = require("tape");
 var logic = require("./logic");
 var testArr = [
-  { id: -3, description: "first todo" },
-  { id: -2, description: "second todo" },
-  { id: -1, description: "third todo" }
+  { id: -3, description: "first todo", done: false },
+  { id: -2, description: "second todo", done: false },
+  { id: -1, description: "third todo", done: false }
 ];
 var testObj = { description: "test todo" };
+var testId = -1;
 test("Example test", function(t) {
   t.pass();
   t.end();
@@ -31,10 +32,10 @@ test("check that todos hasn't changed", function(t) {
 test("check that it returns todos array plus new todo", function(t) {
   const actual = logic.addTodo(testArr, testObj);
   const expected = [
-    { id: -3, description: "first todo" },
-    { id: -2, description: "second todo" },
-    { id: -1, description: "third todo" },
-    { id: 1, description: "test todo" }
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: false },
+    { id: -1, description: "third todo", done: false },
+    { id: 1, description: "test todo", done: false }
   ];
   t.deepEqual(actual, expected, "returns todo array plus new todo");
   t.end();
@@ -46,5 +47,21 @@ test("check that newTodo has an id", function(t) {
     .hasOwnProperty("id");
   const expected = true;
   t.deepEqual(actual, expected, "should add a property of id to newTodo");
+  t.end();
+});
+test("check that markTodo accepts input and returns an array", function(t) {
+  const actual = typeof logic.addTodo(testArr, testId);
+  const expected = "object";
+  t.deepEqual(actual, expected, "should accept input and return an array");
+  t.end();
+});
+test("check that the 'done' property is toggled for the specified ID", function(t) {
+  const actual = logic.markTodo(testArr, testId);
+  const expected = [
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: false },
+    { id: -1, description: "third todo", done: true }
+  ];
+  t.deepEqual(actual, expected, "should toggle done property");
   t.end();
 });
