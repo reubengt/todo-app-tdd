@@ -6,7 +6,6 @@ var testArr = [
   { id: -1, description: "third todo", done: false }
 ];
 var testObj = { description: "test todo" };
-var testId = -1;
 test("Example test", function(t) {
   t.pass();
   t.end();
@@ -49,13 +48,16 @@ test("check that newTodo has an id", function(t) {
   t.deepEqual(actual, expected, "should add a property of id to newTodo");
   t.end();
 });
+
 test("check that markTodo accepts input and returns an array", function(t) {
+  const testId = -1;
   const actual = typeof logic.addTodo(testArr, testId);
   const expected = "object";
   t.deepEqual(actual, expected, "should accept input and return an array");
   t.end();
 });
 test("check that the 'done' property is toggled for the specified ID", function(t) {
+  const testId = -1;
   const actual = logic.markTodo(testArr, testId);
   const expected = [
     { id: -3, description: "first todo", done: false },
@@ -63,5 +65,27 @@ test("check that the 'done' property is toggled for the specified ID", function(
     { id: -1, description: "third todo", done: true }
   ];
   t.deepEqual(actual, expected, "should toggle done property");
+});
+//deleteToDo tests
+
+test("leave the input argument todos unchanged", function(t) {
+  const actual = logic.deleteTodo(testArr);
+  const expected = [
+    { id: -3, description: "first todo" },
+    { id: -2, description: "second todo" },
+    { id: -1, description: "third todo" }
+  ];
+  t.deepEqual(actual, expected, "input is unchanged");
+  t.end();
+});
+
+test("Check if the idToDelete has been deleted", function(t) {
+  const testID = -2;
+  const actual = logic.deleteTodo(testArr, testID);
+  const expected = [
+    { id: -3, description: "first todo" },
+    { id: -1, description: "third todo" }
+  ];
+  t.deepEqual(actual, expected, "element has been deleted");
   t.end();
 });
