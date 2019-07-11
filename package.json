@@ -4,7 +4,8 @@
   "description": "## Use TDD to build a To-do app",
   "main": "dom.js",
   "scripts": {
-    "test": "tape *test.js | tap-spec"
+    "test": "tape *test.js | tap-spec",
+    "test:watch": "nodemon -q -x 'npm test'"
   },
   "repository": {
     "type": "git",
