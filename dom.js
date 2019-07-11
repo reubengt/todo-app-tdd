@@ -43,6 +43,7 @@
     buttonContainer.appendChild(markTodoButtonNode);
     if (todo.done) {
       markTodoButtonNode.textContent = "✔";
+      todoSpan.style.textDecoration = "line-through";
     }
 
     todoNode.addEventListener("click", function(e) {
