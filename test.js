@@ -65,15 +65,16 @@ test("check that the 'done' property is toggled for the specified ID", function(
     { id: -1, description: "third todo", done: true }
   ];
   t.deepEqual(actual, expected, "should toggle done property");
+  t.end();
 });
 //deleteToDo tests
 
 test("leave the input argument todos unchanged", function(t) {
   const actual = logic.deleteTodo(testArr);
   const expected = [
-    { id: -3, description: "first todo" },
-    { id: -2, description: "second todo" },
-    { id: -1, description: "third todo" }
+    { id: -3, description: "first todo", done: false },
+    { id: -2, description: "second todo", done: false },
+    { id: -1, description: "third todo", done: false }
   ];
   t.deepEqual(actual, expected, "input is unchanged");
   t.end();
@@ -83,8 +84,8 @@ test("Check if the idToDelete has been deleted", function(t) {
   const testID = -2;
   const actual = logic.deleteTodo(testArr, testID);
   const expected = [
-    { id: -3, description: "first todo" },
-    { id: -1, description: "third todo" }
+    { id: -3, description: "first todo", done: false },
+    { id: -1, description: "third todo", done: false }
   ];
   t.deepEqual(actual, expected, "element has been deleted");
   t.end();
