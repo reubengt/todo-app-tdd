@@ -41,6 +41,10 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Coming soon", cursive;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .delete {
@@ -77,4 +81,34 @@ body {
   border: 2px solid #3c1518;
   border-radius: 0.4rem;
   height: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#outer-container {
+  width: 30em;
+  height: 30em;
+  border-radius: 5%;
+
+  background-color: #ffdbad;
+
+  padding: 5em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.buttoncontainer {
+  float: right;
+}
+
+#add-todo {
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }

@@ -34,14 +34,17 @@
     todoNode.appendChild(todoSpan);
     todoSpan.appendChild(descNode);
 
+    // add container for both buttons
+    var buttonContainer = document.createElement("div");
+    todoNode.appendChild(buttonContainer);
+
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
-
-    markTodoButtonNode.addEventListener("click", function(e) {
+    todoNode.addEventListener("click", function(e) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(markTodoButtonNode);
+    buttonContainer.appendChild(markTodoButtonNode);
 
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
@@ -50,11 +53,12 @@
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
-    todoNode.appendChild(deleteButtonNode);
+    buttonContainer.appendChild(deleteButtonNode);
 
     // add classes for css
     todoNode.className = "todo";
     todoSpan.className = "todospan";
+    buttonContainer.className = "buttoncontainer";
     deleteButtonNode.classList.add("button", "delete");
     markTodoButtonNode.classList.add("button", "mark");
     return todoNode;
