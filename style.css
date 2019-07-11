@@ -1,0 +1,8 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("wood.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Coming soon', cursive;
+}
