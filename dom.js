@@ -51,7 +51,10 @@
     todoNode.appendChild(markTodoButtonNode);
 
     // add classes for css
-
+    todoNode.className = 'todo';
+    todoSpan.className = 'todospan';
+    deleteButtonNode.classList.add('button', 'delete');
+    markTodoButtonNode.classList.add('button', 'mark');
     return todoNode;
   };
 
