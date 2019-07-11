@@ -33,14 +33,6 @@
     todoNode.appendChild(todoSpan);
     todoSpan.appendChild(descNode);
 
-    // this adds the delete button
-    var deleteButtonNode = document.createElement("button");
-    deleteButtonNode.addEventListener("click", function (event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
-    });
-    todoNode.appendChild(deleteButtonNode);
-
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
 
@@ -49,6 +41,14 @@
       update(newState);
     });
     todoNode.appendChild(markTodoButtonNode);
+
+    // this adds the delete button
+    var deleteButtonNode = document.createElement("button");
+    deleteButtonNode.addEventListener("click", function (event) {
+      var newState = todoFunctions.deleteTodo(state, todo.id);
+      update(newState);
+    });
+    todoNode.appendChild(deleteButtonNode);
 
     // add classes for css
     todoNode.className = 'todo';
