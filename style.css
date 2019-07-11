@@ -1,8 +1,80 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
-    height: 100vh;
-    width: 100vw;
-    background-image: url("wood.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: 'Coming soon', cursive;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("wood.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Coming soon", cursive;
+}
+
+.delete {
+  background-color: #96031a;
+  border-style: none;
+  border-radius: 0.4rem;
+  color: #ffdbad;
+  height: 2rem;
+  font-family: "Raleway", sans-serif;
+  width: 4rem;
+}
+
+.mark {
+  background-color: #ffdbad;
+  border: 2px solid #3c1518;
+  border-radius: 0.4rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.submit-button {
+  background-color: #3c1518;
+  border-style: none;
+  border-radius: 0.4rem;
+  color: #ffdbad;
+  height: 2rem;
+  font-family: "Raleway", sans-serif;
+  width: 4rem;
+}
+
+.textbox {
+  font-family: "Coming Soon", sans-serif;
+  background-color: #ffdbad;
+  border: 2px solid #3c1518;
+  border-radius: 0.4rem;
+  height: 2rem;
 }
