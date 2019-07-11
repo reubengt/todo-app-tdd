@@ -40,11 +40,15 @@
 
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
+    buttonContainer.appendChild(markTodoButtonNode);
+    if (todo.done) {
+      markTodoButtonNode.textContent = "✔";
+    }
+
     todoNode.addEventListener("click", function(e) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
-    buttonContainer.appendChild(markTodoButtonNode);
 
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
