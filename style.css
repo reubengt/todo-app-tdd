@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 *,
@@ -46,7 +46,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.heading {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 0.4rem;
+}
 .delete {
   background-color: #96031a;
   border-style: none;
@@ -55,6 +61,9 @@ body {
   height: 2rem;
   font-family: "Raleway", sans-serif;
   width: 4rem;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  vertical-align: middle;
 }
 
 .mark {
@@ -63,6 +72,7 @@ body {
   border-radius: 0.4rem;
   width: 2rem;
   height: 2rem;
+  vertical-align: middle;
 }
 
 .submit-button {
@@ -73,6 +83,8 @@ body {
   height: 2rem;
   font-family: "Raleway", sans-serif;
   width: 4rem;
+  vertical-align: middle;
+  float: right;
 }
 
 .textbox {
@@ -81,34 +93,40 @@ body {
   border: 2px solid #3c1518;
   border-radius: 0.4rem;
   height: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: calc(100% - 4.2rem);
+  vertical-align: middle;
+  float: left;
 }
 
 #outer-container {
-  width: 30em;
-  height: 30em;
+  width: 70vw;
+  height: 80vh;
   border-radius: 5%;
-
   background-color: #ffdbad;
-
-  padding: 5em;
-
+  padding: 3em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  justify-content: flex-start;
 }
 
 .buttoncontainer {
   float: right;
 }
-
+#todo-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+#todo-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+#todo-container {
+  overflow-y: scroll;
+}
+#todo-container ul li {
+  height: 4em;
+}
 #add-todo {
-  margin: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: auto;
 }
