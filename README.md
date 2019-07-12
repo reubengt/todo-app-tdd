@@ -15,6 +15,7 @@
 
 A note taking app built using Test-Driven-Development.
 Has functionality to add and remove notes, and mark them as 'done'.
+We based our design on a real-world approach as we learnt from last week's Design Burst.Cate's presentation last week. 
 
 ## User stories:
 
