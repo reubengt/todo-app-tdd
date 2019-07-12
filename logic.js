@@ -33,9 +33,9 @@ let todoFunctions = {
     if (newTodo.hasOwnProperty("id") === false) {
       newTodo.id = todoFunctions.generateId();
     }
-    console.log(todosCopy.concat([newTodo]));
     return todosCopy.concat([newTodo]);
   },
+
   deleteTodo: (todos, idToDelete) => {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
@@ -57,7 +57,6 @@ let todoFunctions = {
       if (todo.id === idToMark) {
         todo.done = todo.done === true ? false : true;
       }
-      console.log(todo);
       return todo;
     });
     return todosCopy;

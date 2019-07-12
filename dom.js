@@ -40,8 +40,10 @@
 
     // add markTodo button
     let markTodoButtonNode = document.createElement("button");
+    markTodoButtonNode.setAttribute("aria-label", "Mark as done");
     buttonContainer.appendChild(markTodoButtonNode);
     if (todo.done) {
+      markTodoButtonNode.setAttribute("aria-label", "Mark as not done");
       markTodoButtonNode.textContent = "✔";
       todoSpan.style.textDecoration = "line-through";
     }
@@ -78,12 +80,15 @@
 
       event.preventDefault();
       let description = event.target.elements.description.value;
-      console.log(event.target.elements.description.value); // event.target ....
-      // hint: todoFunctions.addTodo
-      let newState = todoFunctions.addTodo(state, {
-        description: description
-      }); // ?? change this!
-      update(newState);
+
+      if (description !== "") {
+        var newState = todoFunctions.addTodo(state, {
+          description: description
+        }); // ?? change this!
+        event.target.elements.description.value = "";
+
+        update(newState);
+      }
     });
   }
 
