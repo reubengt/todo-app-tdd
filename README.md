@@ -88,3 +88,12 @@ Styling the page! Making it visually seductive :D
 - The DOM is rendered and if it is changed, it must be updated!
 - Callbacks
 - Cloning an array/object allows you to manipulate it and leave it unchanged
+- How to use git stash to prevent master conflicts when forgetting to branch
+
+## Issues addressed
+
+- Cleaning up console logs / formatting functions / housekeeping
+- Compressing background image
+- Don't allow submissions of empty fields and clear field when submitted
+- Fix accessibility from 60 - 100!
+- Converting ES5 => ES6
