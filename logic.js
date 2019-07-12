@@ -33,7 +33,6 @@ var todoFunctions = {
     if (newTodo.hasOwnProperty("id") === false) {
       newTodo.id = todoFunctions.generateId();
     }
-    console.log(todosCopy.concat([newTodo]));
     return todosCopy.concat([newTodo]);
   },
   deleteTodo: function (todos, idToDelete) {
@@ -57,7 +56,6 @@ var todoFunctions = {
       if (todo.id === idToMark) {
         todo.done = todo.done === true ? false : true;
       }
-      console.log(todo);
       return todo;
     });
     return todosCopy;
