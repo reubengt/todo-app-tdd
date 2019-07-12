@@ -17,7 +17,7 @@ A note taking app built using Test-Driven-Development.
 Has functionality to add and remove notes, and mark them as 'done'.
 We based our design on a real-world approach as we learnt from last week's Design Burst. 
 
-[]!(https://gph.is/1Nx8Z7P)
+![](https://gph.is/1Nx8Z7P)
 
 ## User stories:
 
@@ -78,10 +78,14 @@ User input is processed as todo objects inside a todo array, then populated insi
 
 Styling the page! Making it visually seductive :D
 
+
+
 ## Problems we had
 
 - Forgetting to branch
+![](https://gph.is/g/4AyO8PN)
 - Understanding the skeleton we were given
+:skull:
 - Understanding that the DOM is rendered and then remains static. This meant we were complicating our addition of a tick to the button when a todo was marked done. In the end, this was as simple as adding an if statement to check if done === true.
 - When writing tests we used a static set of data. Some simple tests succeeded but would break when we refactored our code. In order to overcome this we could have used unique data per test (Thanks, Jan).
 
@@ -94,6 +98,8 @@ Styling the page! Making it visually seductive :D
 - How to use git stash to prevent master conflicts when forgetting to branch
 
 ## Issues addressed
+
+![](https://gph.is/1M0mQD2)
 
 - Cleaning up console logs / formatting functions / housekeeping
 - Compressing background image
