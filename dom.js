@@ -40,8 +40,10 @@
 
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
+    markTodoButtonNode.setAttribute("aria-label", "Mark as done");
     buttonContainer.appendChild(markTodoButtonNode);
     if (todo.done) {
+      markTodoButtonNode.setAttribute("aria-label", "Mark as not done");
       markTodoButtonNode.textContent = "✔";
     }
 
