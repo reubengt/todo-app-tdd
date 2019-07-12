@@ -51,7 +51,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 2rem;
-  padding: 0.4rem;
+  padding: 0.8rem;
 }
 .delete {
   background-color: #96031a;
@@ -99,8 +99,8 @@ body {
 }
 
 #outer-container {
-  width: 70vw;
-  height: 80vh;
+  width: 85vw;
+  height: 85vh;
   border-radius: 5%;
   background-color: #ffdbad;
   padding: 3em;
@@ -129,4 +129,15 @@ body {
 }
 #add-todo {
   margin-top: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 20px;
+  }
+  #outer-container {
+    width: 95vw;
+    height: 95vh;
+    padding: 1rem;
+  }
 }
