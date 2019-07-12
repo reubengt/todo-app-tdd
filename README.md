@@ -92,10 +92,12 @@ Styling the page! Making it visually seductive :D
 ## Things we learnt
 
 - How to manipulate the DOM
+- How to use BEM
 - The DOM is rendered and if it is changed, it must be updated!
 - Callbacks
 - Cloning an array/object allows you to manipulate it and leave it unchanged
 - How to use git stash to prevent master conflicts when forgetting to branch
+- Using git diff to show the differences 
 
 ## Issues addressed
 
