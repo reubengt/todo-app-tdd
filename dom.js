@@ -40,8 +40,10 @@
 
     // add markTodo button
     var markTodoButtonNode = document.createElement("button");
+    markTodoButtonNode.setAttribute("aria-label", "Mark as done");
     buttonContainer.appendChild(markTodoButtonNode);
     if (todo.done) {
+      markTodoButtonNode.setAttribute("aria-label", "Mark as not done");
       markTodoButtonNode.textContent = "✔";
       todoSpan.style.textDecoration = "line-through";
     }
@@ -80,8 +82,6 @@
       var description = event.target.elements.description.value;
 
       if (description !== "") {
-        console.log(event.target.elements.description.value); // event.target ....
-        // hint: todoFunctions.addTodo
         var newState = todoFunctions.addTodo(state, {
           description: description
         }); // ?? change this!
