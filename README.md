@@ -74,3 +74,26 @@ User input is processed as todo objects inside a todo array, then populated insi
 #### 3. Adding our own features
 
 Styling the page! Making it visually seductive :D
+
+## Problems we had
+
+- Forgetting to branch
+- Understanding the skeleton we were given
+- Understanding that the DOM is rendered and then remains static. This meant we were complicating our addition of a tick to the button when a todo was marked done. In the end, this was as simple as adding an if statement to check if done === true.
+- When writing tests we used a static set of data. Some simple tests succeeded but would break when we refactored our code. In order to overcome this we could have used unique data per test (Thanks, Jan).
+
+## Things we learnt
+
+- How to manipulate the DOM
+- The DOM is rendered and if it is changed, it must be updated!
+- Callbacks
+- Cloning an array/object allows you to manipulate it and leave it unchanged
+- How to use git stash to prevent master conflicts when forgetting to branch
+
+## Issues addressed
+
+- Cleaning up console logs / formatting functions / housekeeping
+- Compressing background image
+- Don't allow submissions of empty fields and clear field when submitted
+- Fix accessibility from 60 - 100!
+- Converting ES5 => ES6
