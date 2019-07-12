@@ -17,7 +17,7 @@ A note taking app built using Test-Driven-Development.
 Has functionality to add and remove notes, and mark them as 'done'.
 We based our design on a real-world approach as we learnt from last week's Design Burst. 
 
-![](https://media.giphy.com/media/4Mni3cxTuKHDi/giphy.gif)
+![](https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif)
 
 ## User stories:
 
@@ -83,7 +83,7 @@ Styling the page! Making it visually seductive :D
 ## Problems we had
 
 - Forgetting to branch
-![](https://media.giphy.com/media/4Mni3cxTuKHDi/giphy.gif)
+![](https://media.giphy.com/media/ZZweDJbmPPLYiwQuf9/giphy.gif)
 - Understanding the skeleton we were given
 :skull:
 - Understanding that the DOM is rendered and then remains static. This meant we were complicating our addition of a tick to the button when a todo was marked done. In the end, this was as simple as adding an if statement to check if done === true.
