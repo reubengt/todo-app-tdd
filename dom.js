@@ -1,12 +1,12 @@
 // part 2 linking it all together
 // The function here is called an iife,
 // it keeps everything inside hidden from the rest of our application
-(function() {
+(() => {
   // This is the dom node where we will keep our todo
-  var container = document.getElementById("todo-container");
-  var addTodoForm = document.getElementById("add-todo");
+  let container = document.getElementById("todo-container");
+  let addTodoForm = document.getElementById("add-todo");
 
-  var state = [
+  let state = [
     {
       id: -3,
       description: "first todo"
@@ -22,40 +22,40 @@
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
-  var createTodoNode = function(todo) {
-    var todoNode = document.createElement("li");
+  let createTodoNode = todo => {
+    let todoNode = document.createElement("li");
     // you will need to use addEventListener
     todoNode.addEventListener("click", function(mark) {
       // Come back to?
     });
     // add span holding description
-    var todoSpan = document.createElement("span");
-    var descNode = document.createTextNode(todo.description);
+    let todoSpan = document.createElement("span");
+    let descNode = document.createTextNode(todo.description);
     todoNode.appendChild(todoSpan);
     todoSpan.appendChild(descNode);
 
     // add container for both buttons
-    var buttonContainer = document.createElement("div");
+    let buttonContainer = document.createElement("div");
     todoNode.appendChild(buttonContainer);
 
     // add markTodo button
-    var markTodoButtonNode = document.createElement("button");
+    let markTodoButtonNode = document.createElement("button");
     buttonContainer.appendChild(markTodoButtonNode);
     if (todo.done) {
       markTodoButtonNode.textContent = "✔";
       todoSpan.style.textDecoration = "line-through";
     }
 
-    todoNode.addEventListener("click", function(e) {
-      var newState = todoFunctions.markTodo(state, todo.id);
+    todoNode.addEventListener("click", e => {
+      let newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
 
     // this adds the delete button
-    var deleteButtonNode = document.createElement("button");
+    let deleteButtonNode = document.createElement("button");
     deleteButtonNode.textContent = "Delete";
-    deleteButtonNode.addEventListener("click", function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
+    deleteButtonNode.addEventListener("click", event => {
+      let newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
     });
     buttonContainer.appendChild(deleteButtonNode);
@@ -71,16 +71,16 @@
 
   // bind create todo form
   if (addTodoForm) {
-    addTodoForm.addEventListener("submit", function(event) {
+    addTodoForm.addEventListener("submit", event => {
       // https://developer.mozilla.org/en-US/docs/Web/Events/submit
       // what does event.preventDefault do?
       // what is inside event.target?
 
       event.preventDefault();
-      var description = event.target.elements.description.value;
+      let description = event.target.elements.description.value;
       console.log(event.target.elements.description.value); // event.target ....
       // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, {
+      let newState = todoFunctions.addTodo(state, {
         description: description
       }); // ?? change this!
       update(newState);
@@ -88,16 +88,16 @@
   }
 
   // you should not need to change this function
-  var update = function(newState) {
+  let update = newState => {
     state = newState;
     renderState(state);
   };
 
   // you do not need to change this function
-  var renderState = function(state) {
-    var todoListNode = document.createElement("ul");
+  let renderState = state => {
+    let todoListNode = document.createElement("ul");
 
-    state.forEach(function(todo) {
+    state.forEach(todo => {
       todoListNode.appendChild(createTodoNode(todo));
     });
 
