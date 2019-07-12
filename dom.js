@@ -78,12 +78,17 @@
 
       event.preventDefault();
       var description = event.target.elements.description.value;
-      console.log(event.target.elements.description.value); // event.target ....
-      // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, {
-        description: description
-      }); // ?? change this!
-      update(newState);
+
+      if (description !== "") {
+        console.log(event.target.elements.description.value); // event.target ....
+        // hint: todoFunctions.addTodo
+        var newState = todoFunctions.addTodo(state, {
+          description: description
+        }); // ?? change this!
+        event.target.elements.description.value = "";
+
+        update(newState);
+      }
     });
   }
 
