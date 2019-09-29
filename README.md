@@ -1,4 +1,4 @@
-# Project
+# Week 2 Project - Founders and coders summer 2019 cohort
 
 ## TO-DO app
 
